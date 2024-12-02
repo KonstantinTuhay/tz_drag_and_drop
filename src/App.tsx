@@ -17,10 +17,7 @@ export const App = () => {
 
   const [currentCard, setCurrentCard] = useState<Card | null>(null);
 
-  function dragStartHandler(
-    e: React.DragEvent<HTMLDivElement>,
-    card: Card
-  ): void {
+  function dragStartHandler(card: Card): void {
     setCurrentCard(card);
   }
 
@@ -66,7 +63,7 @@ export const App = () => {
       {cardList.map((card) => (
         <div
           key={card.id}
-          onDragStart={(e) => dragStartHandler(e, card)}
+          onDragStart={(e) => dragStartHandler(card)}
           onDragLeave={(e) => dragEndHandler(e)}
           onDragEnd={(e) => dragEndHandler(e)}
           onDragOver={(e) => dragOverHandler(e)}
