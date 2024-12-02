@@ -63,7 +63,7 @@ export const App = () => {
       {cardList.map((card) => (
         <div
           key={card.id}
-          onDragStart={(e) => dragStartHandler(card)}
+          onDragStart={() => dragStartHandler(card)}
           onDragLeave={(e) => dragEndHandler(e)}
           onDragEnd={(e) => dragEndHandler(e)}
           onDragOver={(e) => dragOverHandler(e)}
